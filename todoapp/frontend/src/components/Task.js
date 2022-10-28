@@ -10,7 +10,7 @@ const Task = ({ task, deleteTask }) => {
         <FontAwesomeIcon
           icon={faXmark}
           style={{ cursor: "pointer" }}
-          onClick={() => deleteTask(task.id)}
+          onClick={() => deleteTask(task.text)}
         />
       </h3>
     </div>

@@ -12,7 +12,7 @@ const TaskForm = ({ addTask }) => {
       return;
     }
 
-    addTask({ text });
+    addTask(text);
 
     setText("");
   };
