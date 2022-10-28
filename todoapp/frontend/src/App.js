@@ -2,6 +2,7 @@ import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import React from "react";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -16,7 +17,7 @@ function App() {
   // Add task
   const addTask = (text) => {
     axios
-      .post("http://localhost:8000/api/add_task", { 'text': text })
+      .post("http://localhost:8000/api/add_task", { text: text })
       .then((res) => console.log(res));
   };
 
