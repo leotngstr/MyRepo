@@ -14,7 +14,7 @@ async def fetch_all_tasks():
 
 async def create_task(todo):
     document = todo
-    result = await collection.insert_one(document)
+    await collection.insert_one(document)
     return document
 
 async def remove_task(text):
