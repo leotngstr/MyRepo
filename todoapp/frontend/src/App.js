@@ -1,8 +1,9 @@
-import TaskForm from "./components/TaskForm";
-import TaskList from "./components/TaskList";
+import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import TaskForm from "./components/TaskForm";
+import TaskList from "./components/TaskList";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -28,12 +29,14 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="container-sm">
       <TaskForm addTask={addTask} />
       {tasks.length > 0 ? (
         <TaskList tasks={tasks} deleteTask={deleteTask} />
       ) : (
-        "No Tasks To Show"
+        <div class="alert alert-primary mt-3 col-7 offset-2" role="alert">
+          No Tasks To Show
+        </div>
       )}
     </div>
   );
